@@ -1,0 +1,86 @@
+.ProgressBar {
+  min-height: calc(var(--breadcrumbs-height) * 3);
+  background-color: var(--secondary-light-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+
+  &__innerStepWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+
+  &__step {
+    color: var(--secondary-light-color);
+    background-color: var(--primary-dark-color);
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1em;
+    z-index: 1;
+    transition: all 200ms ease-in-out;
+    transition-delay: 300ms;
+
+    &--success {
+      background-color: var(--primary-success-color);
+    }
+  }
+
+  &__heading {
+    text-align: center;
+    position: absolute;
+    top: 40px;
+  }
+
+  &__line {
+    height: 2px;
+    width: 45%;
+    background-color: var(--secondary-dark-color);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-8px);
+    transition: all 300ms ease-in-out;
+    transition-delay: 500ms;
+
+    &--full {
+      width: 90%;
+      transform: translate(-50%, -8px);
+    }
+
+    &--right {
+      left: auto;
+      right: 0;
+    }
+
+    &--seen {
+      background-color: var(--primary-dark-color);
+    }
+  }
+
+  &__completed {
+    height: 2px;
+    width: 100%;
+    background-color: var(--primary-success-color);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -8px);
+    transition: all 400ms ease-in;
+    transition-delay: 500ms;
+
+    &--show {
+      transform: translate(0, -8px);
+    }
+  }
+}

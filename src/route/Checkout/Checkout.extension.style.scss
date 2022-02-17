@@ -1,0 +1,8 @@
+// removed before element
+.Checkout {
+  &::before {
+    @include after-mobile {
+      min-height: 0;
+    }
+  }
+}
